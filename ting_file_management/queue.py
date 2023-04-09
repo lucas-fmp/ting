@@ -10,6 +10,7 @@ class Queue(AbstractQueue):
 
     def enqueue(self, value):
         self._data.append(value)
+        return self._data[-1]
 
     def dequeue(self):
         if len(self._data) == 0:
@@ -21,8 +22,8 @@ class Queue(AbstractQueue):
             raise IndexError("Índice Inválido ou Inexistente")
         return self._data[index]
 
-    def search_file(self, file_to_search):
+    def search_file(self, path_file):
         for file in self._data:
-            if file == file_to_search:
+            if file["nome_do_arquivo"] == path_file:
                 return True
         return False
