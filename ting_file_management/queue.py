@@ -20,3 +20,9 @@ class Queue(AbstractQueue):
         if index < 0 or index >= len(self._data):
             raise IndexError("Índice Inválido ou Inexistente")
         return self._data[index]
+
+    def search_file(self, file_to_search):
+        for file in self._data:
+            if file == file_to_search:
+                return True
+        return False
